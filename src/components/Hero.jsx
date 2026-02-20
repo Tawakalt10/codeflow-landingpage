@@ -1,3 +1,4 @@
+import { ChevronDown } from "lucide-react";
 import {useEffect, useState } from "react";
 
 export default function Hero () {
@@ -26,17 +27,28 @@ export default function Hero () {
   
       <div className="relative order-2 w-full">
            <div className="relative bg-white/5 backdrop-blur-xl rounded-xl sm:rounded-2xl px-3 sm:p-4 shadow-2xl borde border-white/10">
-           <div className="bg-gradient-to-bg from-gray-900/20 to gray-800/20 backdrop-blur-sm rounded-lg overflow-hidden h-[200px] sm:w-[350px] lg:h-[450px] border border-white/5">
+           <div className="bg-gradient-to-bg from-gray-900/20 to gray-800/20 backdrop-blur-sm rounded-lg overflow-hidden h-[280px] sm:w-[350px] lg:h-[450px] border border-white/5">
             {/*  IDE HEADER */}
-            <div className="flex items-center justify-between px-3 sm:px-4 py-2 sm:py-3 bg-white/5 backdrop-blur-sm boder-b border-white/10"></div>
+    <div className="flex items-center justify-between px-3 sm:px-4 py-2 sm:py-3 bg-white/5 backdrop-blur-sm boder-b border-white/10">
+    
+           <div className=" flex items-center  space-x-2">
+           <div  className=" flex items-center space-x-1 sm:space-x-2">
+            <div className="w-2 h-2  sm:w-3 sm:h-3 rounded-full bg-red-500"/>
+            <div className="w-2 h-2  sm:w-3 sm:h-3 rounded-full bg-yellow-500"/>
+            <div className="w-2 h-2  sm:w-3 sm:h-3 rounded-full bg-green-500"/> 
+           </div>
+           <span className="text-xs sm:text-sm text-gray-300"> CodeFlow AI  </span>
+            </div>
+             <ChevronDown className="w-3 h-3 sm:w-4 sm:h-4 text-gray-400"/>
+        </div>
         </div>
       </div>
 
       </div>
-     
+    
   
     </section>
     
     );
-    
+               
 }    
