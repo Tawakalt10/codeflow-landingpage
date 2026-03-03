@@ -4,6 +4,7 @@ import {useEffect, useState } from "react";
 export default function Hero () {
 
     const [mousePosition, setMousePosition] = useState({x: 0, y: 0});
+    const [activeTab, setActiveTab] = useState("App.jsx");
     
 
       useEffect(() => {
@@ -41,7 +42,24 @@ export default function Hero () {
             </div>
              <ChevronDown className="w-3 h-3 sm:w-4 sm:h-4 text-gray-400"/>
         </div>
+
+           <div className="p-3 sm:p-4 relative h-full">
+                {/* File types */}
+
+            <div className="flex space-1 sm:space-x-2 m-3 sm:mb-4 overflow-x-auto">
+                <button className={`px-3 py-2 backdrop-blur-sm tex-xs sm:text-sm rounded-t-lg border ${
+                   activeTab === "App.jsx" 
+                   ? "bg-blue-500/30 text-white border blue-400/20"
+                  : "bg-white/5 text-gray-300 border-white/10 hover: bg-white-10"} text-gray-300
+                   transition-all duration-200 whitespace-nowrap`}
+                   > App.jsx</button>
+                <button className="px-3 py-2 backdrop-blur-sm tex-xs sm:text-sm rounded-t-lg border bg-white/5 text-gray-300 transition-all duration-200 whitespace-nowrap"> Hero.jsx</button>
+                <button className="px-3 py-2 backdrop-blur-sm tex-xs sm:text-sm rounded-t-lg border bg-white/5 text-gray-300 transition-all duration-200 whitespace-nowrap"> Navbar.jsx</button>
+            </div>
         </div>
+        </div>
+
+     
       </div>
 
       </div>
