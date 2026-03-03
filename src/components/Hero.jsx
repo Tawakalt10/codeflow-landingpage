@@ -1,5 +1,8 @@
 import { ChevronDown } from "lucide-react";
 import {useEffect, useState } from "react";
+import { codeExamples } from "../data/CodeExample";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { oneLight } from "react-syntax-highlighter/dist/cjs/styles/prism";
 
 export default function Hero () {
 
@@ -47,18 +50,51 @@ export default function Hero () {
                 {/* File types */}
 
             <div className="flex space-1 sm:space-x-2 m-3 sm:mb-4 overflow-x-auto">
-                <button className={`px-3 py-2 backdrop-blur-sm tex-xs sm:text-sm rounded-t-lg border ${
+                <button 
+                onClick={() => setActiveTab("App.jsx")}
+                className={`px-3 py-2 backdrop-blur-sm tex-xs sm:text-sm rounded-t-lg border ${
                    activeTab === "App.jsx" 
-                   ? "bg-blue-500/30 text-white border blue-400/20"
-                  : "bg-white/5 text-gray-300 border-white/10 hover: bg-white-10"} text-gray-300
+                   ? "bg-blue-500/30 text-white border-blue-400/20"
+                  : "bg-white/5 text-gray-300 border-white/10 hover:bg-white/10"} text-gray-300
                    transition-all duration-200 whitespace-nowrap`}
                    > App.jsx</button>
-                <button className="px-3 py-2 backdrop-blur-sm tex-xs sm:text-sm rounded-t-lg border bg-white/5 text-gray-300 transition-all duration-200 whitespace-nowrap"> Hero.jsx</button>
-                <button className="px-3 py-2 backdrop-blur-sm tex-xs sm:text-sm rounded-t-lg border bg-white/5 text-gray-300 transition-all duration-200 whitespace-nowrap"> Navbar.jsx</button>
+
+                <button 
+                onClick={() => setActiveTab("Hero.jsx")}
+                className= {`px-3 py-2 backdrop-blur-sm tex-xs sm:text-sm rounded-t-lg border ${
+                   activeTab === "Hero.jsx" 
+                   ? "bg-blue-500/30 text-white border-blue-400/20"
+                  : "bg-white/5 text-gray-300 border-white/10 hover:bg-white/10"} text-gray-300
+                   transition-all duration-200 whitespace-nowrap`}
+                   > Hero.jsx</button>
+
+                <button 
+                onClick={() => setActiveTab("Navbar.jsx")}
+                className={`px-3 py-2 backdrop-blur-sm tex-xs sm:text-sm rounded-t-lg border ${
+                   activeTab === "Navbar.jsx" 
+                   ? "bg-blue-500/30 text-white border-blue-400/20"
+                  : "bg-white/5 text-gray-300 border-white/10 hover:bg-white/10"} text-gray-300
+                   transition-all duration-200 whitespace-nowrap`}
+                   > Navbar.jsx
+                   </button>
+
+                   
+            </div>
+           
+            {/* Code Content */}
+            <div className="relative overflow-hidden flex=grow">
+                {/* <SyntaxHighlighter language = "javascript">
+                  {codeExamples[activeTab]}
+                </SyntaxHighlighter> */}
+
+        <SyntaxHighlighter language="javascript" style={oneLight}>
+  {String(codeExamples?.[activeTab] ?? "")}
+</SyntaxHighlighter>
+
             </div>
         </div>
         </div>
-
+     
      
       </div>
 
