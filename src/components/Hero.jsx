@@ -1,8 +1,8 @@
 import { ChevronDown } from "lucide-react";
 import {useEffect, useState } from "react";
-import { codeExamples } from "../data/CodeExample";
+import { codeExamples, floatingCards } from "../data/CodeExample";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { oneLight } from "react-syntax-highlighter/dist/cjs/styles/prism";
+import { nightOwl } from "react-syntax-highlighter/dist/cjs/styles/prism";
 
 export default function Hero () {
 
@@ -18,6 +18,8 @@ export default function Hero () {
         window.addEventListener("mousemove", handleMouseMove)
         return () =>  window.removeEventListener("mousemove", handleMouseMove)
       }, []);
+
+      const currentFloatingcard = floatingCards[activeTab];
 
       return ( 
      <section className="relative min-h-screen flex items-center justify-center pt-16 sm:pt-20 px-4 lg:px-8 overflow-hidden">
@@ -49,7 +51,7 @@ export default function Hero () {
            <div className="p-3 sm:p-4 relative h-full">
                 {/* File types */}
 
-            <div className="flex space-1 sm:space-x-2 m-3 sm:mb-4 overflow-x-auto">
+            <div className="flex space-x-1 sm:space-x-2 mb-3 sm:mb-4 overflow-x-auto">
                 <button 
                 onClick={() => setActiveTab("App.jsx")}
                 className={`px-3 py-2 backdrop-blur-sm tex-xs sm:text-sm rounded-t-lg border ${
@@ -87,15 +89,43 @@ export default function Hero () {
                   {codeExamples[activeTab]}
                 </SyntaxHighlighter> */}
 
-        <SyntaxHighlighter language="javascript" style={oneLight}>
+        <SyntaxHighlighter language="javascript" style={nightOwl} customStyle={{
+          margin: 0, 
+          borderRadius:
+           '8px', 
+           fontSize:'11px',
+           lineHeight:"1.4",
+           height:"100%",
+           border: "1px solid #3c3c3c"
+           }}>
   {String(codeExamples?.[activeTab] ?? "")}
 </SyntaxHighlighter>
 
             </div>
         </div>
         </div>
-     
-     
+
+      {/*Floating cards  */}
+       <div className="{`hidden lg:block absolute bottom-4 right-4 
+       transform translate-y-8 w-72 ${currentFloatingcard.bgColor}`}">
+
+        <div className="flex items-center space-x-2 mb-2">
+          <div className={`w-6 h-6 ${currentFloatingcard.iconColor} flex items-center justify-center text-sm font-bold`}
+          >
+          
+             {currentFloatingcard.icon}
+             </div>
+          <span className={`text-sm-medium ${currentFloatingcard.textColor}`}>
+            {currentFloatingcard.title}</span>
+
+        </div>
+
+        <div className={`text-sm-medium ${currentFloatingcard.textColor}`}> 
+          {currentFloatingcard.content}
+          </div>
+       </div>
+       
+
       </div>
 
       </div>
