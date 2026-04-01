@@ -1,4 +1,4 @@
-import { ChevronDown, Sparkles } from "lucide-react";
+import { ChevronDown, Sparkles, ArrowRight, Play  } from "lucide-react";
 import {useEffect, useState } from "react";
 import { codeExamples, floatingCards } from "../data/CodeExample";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
@@ -25,7 +25,7 @@ export default function Hero () {
      <section className="relative min-h-screen flex items-center justify-center pt-16 sm:pt-20 px-4  sm:px-6 lg:px-8 overflow-hidden">
       <div className="absolute inset-0 opacity-30"  
       style={{
-      background: `radial-gradient(600px= circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(59, 130, 246, 0.15), transparent 40%)`
+      background: `radial-gradient(600px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(59, 130, 246, 0.15), transparent 40%)`
       }}
       />
 
@@ -47,6 +47,28 @@ export default function Hero () {
           <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent block mb-1 sm:mb-2"> Build Faster</span>
           <span className="bg-gradient-to-r from-white via-blue-100 to-cyan-100 bg-clip-text text-transparent block mb-1 sm:mb-2"> With CodeFlow  AI </span>
          </h1>
+
+         <p className="text-md sm:text-base lg:text-lg text-gray-400 max-w-2xl mx-auto lg:mx-0 mb-6 sm:mb-8 animate-in slide-im-from-bottom duration-700 delay-200 leading-relaxed">
+             Accelerate your development workflow with  intelligent code  completion,
+             automated testing and smart debugging. Ship production-ready code 10x faster.
+         </p>
+
+         <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 sm:gap-4 mb-8 sm:mb-12 animat-in slide-in-from bottom duration-700 delay-300"> 
+          <button className="group w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-linear-to-b from-blue-600 to-blue-400 rounded-lg font-semibold  text-sm sm:text-base transition-all duration-300  hover:scale-102 flex items-center justify-center space-x-2">
+            <span> Start Coding free </span>
+            <ArrowRight  className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform duration-300"/>
+          </button>
+
+           <button className ="group w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4  bg-white/5 backdrop-blur-  rounded-lg font-semibold  text-sm sm:text-base transition-all duration-300  hover:scale-102 flex items-center justify-center space-x-2">
+            <div> 
+              <Play/>
+            </div>
+            
+           <span> Watch Demo</span>
+          </button>
+        
+        
+         </div>
       </div>
   
       <div className="relative order-2 w-full">
