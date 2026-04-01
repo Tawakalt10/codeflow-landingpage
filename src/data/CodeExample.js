@@ -87,9 +87,9 @@ export const floatingCards = {
     iconColor: "text-purple-400",
     textColor: "text-purple-200",
     contentColor: "text-pirple-300",
-    icon: "AI",
-    title:"Smart Completion",
-    content: "AI-powered code suggestions in real-time"  
+    icon: "⚡",
+    title:"Autoanimation",
+    content: "Dynamic typing effects generated automatically"  
 },
 
   "Navbar.jsx": {
@@ -97,9 +97,9 @@ export const floatingCards = {
     iconColor: "text-emerald-400",
     textColor: "text-emerald-200",
     contentColor: "text-emerald-300",
-    icon: "AI",
-    title:"Smart Completion",
-    content: "AI-powered code suggestions in real-time"  
+    icon: "⚡",
+    title:"Smart Search",
+    content: "Intelligent code search across your project"  
   }
 }
 
