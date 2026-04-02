@@ -5,7 +5,7 @@ import SyntaxHighlighter from "react-syntax-highlighter";
 const features = [
     {
    title: "AI Code Completion",
-   description: "Intelligent code suggestions powered by advance I that learns from you",
+   description: "Intelligent code suggestions powered by advance AI that learns from your coding patterns.Get real time assitance with synthax, logic and best practices",
    codeSnippet: `function handleSubmit() {
 //    AI suggests next line
 // const data= await fetch ("/api/sunmit")}`,
@@ -16,7 +16,7 @@ const features = [
 
 {
    title: "Automated Testing",
-   description: "Generate comprehensive test suites automatically. Our AI analyzes your",
+   description: "Generate comprehensive test suites automatically. Our AI analyzes your code and creates unit tests, integration tests and edge case coverage",
      codeSnippet: `describe ("User Authentication", {} => {
        // Auto-generatedtest 
        it("Should login sucessfully", () => {
@@ -102,8 +102,9 @@ export default function Features () {
            {/* text section */}
            <div className="flex-1 w-full">
             <div className="max-w-lg mx-auto lg:mx-0 text-center lg:text-left">
-                <h3 className="text-4xl sm:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6 text-white">{feature.title}</h3>
-                <p>{feature.description}</p>
+                <h3 className="text-4xl sm:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6 text-white">
+                    {feature.title}</h3>
+                <p className="text-gray-300 text-base text-xl sm:text-lg leading-relaxed">{feature.description}</p>
             </div>
 
            </div>
