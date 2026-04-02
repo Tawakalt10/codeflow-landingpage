@@ -58,9 +58,12 @@ export default function Features () {
         <div className="space-y-16 sm:space-y-20  lg:space-y-32">
 
         {features.map((feature, key )=> (
-            <div key={key} className="" >
+            <div key={key} 
+            className={`flex flex-col lg:flex-grow items-center gap-8 sm:gap-12 ${
+            feature.imagePosition === "right" ? "lg:flex-row-reverse" : ""}` }>
             {/* Code Section */}
-            <div>
+            <div className="flex-1 w-full">
+                <div className="relative group ">
                 <div className="relative bg-gray-900/50 backdrop-blur-sm border border-gray-700/50
                 rounded-xl sm:rounded-2xl p-4 sm:p-6 overflow-hidden group-hover:border-1
                 group-hover:border-blue-600/50 transition-all duration-300">
@@ -92,10 +95,19 @@ export default function Features () {
                   {feature.codeSnippet}
                 </SyntaxHighlighter>
                 </div>
-            </div> 
+               </div> 
+              </div>
+              </div>
+           </div>
+           {/* text section */}
+           <div className="flex-1 w-full">
+            <div className="max-w-lg mx-auto lg:mx-0 text-center lg:text-left">
+                <h3 className="text-4xl sm:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6 text-white">{feature.title}</h3>
+                <p>{feature.description}</p>
             </div>
-            </div>
-             </div>
+
+           </div>
+        </div>
 
         ))}
           
