@@ -51,7 +51,8 @@ const plans = [
 
 
 export default function Pricing () {
-    return (  <section id="pricing"
+    return ( 
+         <section id="pricing"
      className="py-16 sm:py-20 px-10 sm:px-6 lg:px-8 relative">
     
         <div className="max-w-6xl mx-auto">
@@ -62,7 +63,7 @@ export default function Pricing () {
         <br/>
 
         <span className="bg-gradient-to-b from-blue-400 to-cyan-400  bg-clip-text text-transparent">
-            Priving Plans</span>
+            Pricing Plans</span>
         </h2>
         <p className="text-gray-400 text-base  sm:text-lg max-w-2xl mx-auto"> Choose the perfect plan for your needs. All plans in lud a 14-day 
             free trial.
