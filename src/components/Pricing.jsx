@@ -70,10 +70,10 @@ export default function Pricing () {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-6">
         {plans.map((plan, key) => (
-            <div key={key} className={`relative bg-slate-900/50 backdrop-blur-sm-border rounded-xl sm:rounded-2xl p-6 sm:p-8 transition-all duration-300 
-                overflow-visibile group flex  flex-col h-full ${plan.mostPopular
+            <div key={key} className={`relative bg-slate-900/50 backdrop-blur-sm border rounded-xl sm:rounded-2xl p-6 sm:p-8 transition-all duration-300 
+                overflow-visible group flex  flex-col h-full ${plan.mostPopular
                  ? "border-blue-500 shadow-2xl shadow-blue-500/20 lg:scale-105" 
-                 : "border-slate-800 hover:border-slate-700"
+                 : "border border-slate-800 hover:border-slate-700"
                  }`}
                  >
                     {plan.mostPopular && (
@@ -99,13 +99,13 @@ export default function Pricing () {
                     </div>
                 </div>
 
-                <ul>
+                <ul className="space-y-3 sm:space-y-4 mb-6 sm:mb-8 flex-row">
                     {plan.features.map((feature,featureKey) =>(
                         <li key={featureKey} className="flex items-start space-x-2 sm:space-x-3">
                             <div className="flex-shrink-0 w-4 h-4 sm:w-5 sm-h-5 rounded-full bg-blue-500/20 flex items-center justify-center mt-0.5">
                                 <Check className ="w-2.5 h-2.5 sm:w-3  sm:h-3 text-blue-400 "/>
                             </div>
-                        <span>{feature} </span>
+                        <span className="text-gray-300 text-sm sm:text-base">{feature} </span>
                         </li>
                     ))}
                 </ul>
