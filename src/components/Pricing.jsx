@@ -109,9 +109,24 @@ export default function Pricing () {
                         </li>
                     ))}
                 </ul>
+
+                <button className={`w-full py-2.5 sm:py-3 px-4 sm:px-6 rounded-lg font-semibold transition-all duration-300 mt-auto hover:scale-102 cursor-pointer text-sm sm:text-base
+                  ${plan.mostPopular
+                    ? "bg-gradient-to-b from-blue-500 to-cyan-400"
+                    : "bg-white/5 border border-white/10 hover:bg-white/10"
+                }`}
+                >
+                    Get Started
+                </button>
             </div>
         ))}    
-        </div>   
+        </div> 
+
+        <div className="mt-8 sm:mt-12 text-center">
+         <p className="text-gray-400 text-base text-xl">
+            Need a custom plan? <a href="#" className="text-blue-400 hover:text-blue-300">Contact our sales team</a>
+         </p>
+        </div>  
         </div>
     </section>
         
